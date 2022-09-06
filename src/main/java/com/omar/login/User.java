@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class User {
     private String user;
-    private String pwd;
+    private String password;
     private String token;
     private String error;
     

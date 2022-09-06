@@ -21,13 +21,12 @@ import org.springframework.security.core.authority.AuthorityUtils;
 public class UserController {
 
     @PostMapping("/user")
-    public User login(@RequestParam("username") String username, @RequestParam("password") String pwd) {
-        username = "admin";
-        pwd = "12345";
+    public User login(@RequestParam("username") String username, @RequestParam("password") String password) {
+        
         
         User user = new User();
 
-        if (user.equals(pwd) && user.equals(username)) {
+        if (user.equals(password) && user.equals(username)) {
             String token = getJWTToken(username);
             user.setUser(username);
             user.setToken(token);
